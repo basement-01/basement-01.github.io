@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="main.css" />
+    <!--Script-->
+    <script defer src="main.js"></script>
+  </head>
+  <!-- Main -->
+  <body>
+    <button onclick="history.back()">뒤로가기</button>
+    <input readonly id="operator" />
+    <input readonly type="number" id="result" />
+    <div id="row">
+      <button id="num-7">7</button>
+      <button id="num-8">8</button>
+      <button id="num-9">9</button>
+      <button id="plus" class="oper">+</button>
+    </div>
+    <div id="row">
+      <button id="num-4">4</button>
+      <button id="num-5">5</button>
+      <button id="num-6">6</button>
+      <button id="minus" class="oper">-</button>
+    </div>
+    <div id="row">
+      <button id="num-1">1</button>
+      <button id="num-2">2</button>
+      <button id="num-3">3</button>
+      <button id="divide" class="oper">÷</button>
+    </div>
+    <div id="row">
+      <button id="clear">C</button>
+      <button id="num-0">0</button>
+      <button id="calculate" class="oper">=</button>
+      <button id="multiply" class="oper">x</button>
+    </div>
+  </body>
+</html>
