@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.31d6cfe0.css",
+    "main.js": "./static/js/main.0c1137cf.js",
+    "static/js/453.25e16305.chunk.js": "./static/js/453.25e16305.chunk.js",
+    "static/media/large.mp4": "./static/media/large.cbcec862719e7b2b8291.mp4",
+    "static/media/img1.jpg": "./static/media/img1.76df4a464f5b00c4da20.jpg",
+    "static/media/img3.jpg": "./static/media/img3.f0a7045c99b68aca9451.jpg",
+    "static/media/img2.jpg": "./static/media/img2.b1e17f432691a85c38d4.jpg",
+    "static/media/hero_macbook_air_m3__cp4t7pn8zqaa_largetall.jpg": "./static/media/hero_macbook_air_m3__cp4t7pn8zqaa_largetall.dd3f2d2f00e509e855d0.jpg",
+    "static/media/hero_iphone15pro__i70z9oz3hj2i_largetall.jpg": "./static/media/hero_iphone15pro__i70z9oz3hj2i_largetall.74e4fb5848979457027c.jpg",
+    "static/media/promo_apple_watch_ultra2_order__dyxqj5ia98om_large.jpg": "./static/media/promo_apple_watch_ultra2_order__dyxqj5ia98om_large.11bcbe726c386f3c8ade.jpg",
+    "static/media/promo_mbp__ek7p477bkp6q_large.jpg": "./static/media/promo_mbp__ek7p477bkp6q_large.b670fd88eeb193c678fb.jpg",
+    "static/media/promo_ipad__fioegapg12qi_large.jpg": "./static/media/promo_ipad__fioegapg12qi_large.38e20e0188ba40c2cb6b.jpg",
+    "static/media/promo_wwdc24_announce__fv0p5miwnjiq_large.jpg": "./static/media/promo_wwdc24_announce__fv0p5miwnjiq_large.e4cf009090bf46102cfa.jpg",
+    "static/media/promo_iphone15_announce__fmxxi8r9fkuy_large.jpg": "./static/media/promo_iphone15_announce__fmxxi8r9fkuy_large.fb4d84467f7563ca60bb.jpg",
+    "static/media/promo_airpods_pro_order__d8xv36p4uwae_large.jpg": "./static/media/promo_airpods_pro_order__d8xv36p4uwae_large.8f1819d4e0c17bba4b1d.jpg",
+    "index.html": "./index.html",
+    "main.0c1137cf.js.map": "./static/js/main.0c1137cf.js.map",
+    "453.25e16305.chunk.js.map": "./static/js/453.25e16305.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.0c1137cf.js"
+  ]
+}
