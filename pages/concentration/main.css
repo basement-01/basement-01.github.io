@@ -1,0 +1,44 @@
+.card {
+    display: inline-block;
+    width: 80px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    perspective: 140px;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    text-align: center;
+    transition: transform 0.8s;
+}
+/*! 카드 뒤집기 클래스 */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+.card-back {
+    background: navy;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    backface-visibility: hidden;
+}
+.card-front {
+    transform: rotateY(180deg);
+}
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+}
+#startButton {
+    margin: 20px 0;
+    padding: 16px 40px;
+}
