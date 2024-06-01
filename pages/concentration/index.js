@@ -49,7 +49,7 @@ function createCard(i) {
 //! 게임 시작 함수
 function startGame() {
     $start.style.display = "none";
-    $watch.innerHTML = "0.000" + "ms";
+    $watch.innerHTML = "0.000" + "초";
     $wrapper.innerHTML = "";
     $message.innerHTML = "";
     shuffle();
@@ -95,7 +95,7 @@ function onClickCard() {
         }
         setTimeout(() => {
             clearInterval(tInterval);
-            $message.append("축하합니다! 기록은 " + (difference / 1000).toFixed(3) + "ms 입니다.");
+            $message.append("축하합니다! 기록은 " + (difference / 1000).toFixed(3) + "초 입니다.");
             resetGame();
         }, 800);
         return;
@@ -123,7 +123,7 @@ function stopwatch() {
 function updateTime() {
     updatedTime = new Date().getTime();
     difference = updatedTime - startTime;
-    $watch.innerHTML = (difference / 1000).toFixed(3) + "ms";
+    $watch.innerHTML = (difference / 1000).toFixed(3) + "초";
 }
 
 //! 게임 리셋 함수
@@ -153,4 +153,4 @@ for (let i = 0; i < total; i++) {
     card.addEventListener("click", onClickCard);
     $wrapper.appendChild(card);
 }
-$watch.innerHTML = "0.000" + "ms";
+$watch.innerHTML = "0.000" + "초";
