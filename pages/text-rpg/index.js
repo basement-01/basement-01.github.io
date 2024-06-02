@@ -76,11 +76,13 @@ class Game {
     //! 일반 메뉴 메서드
     onGameMenuInput = (event) => {
         event.preventDefault();
+
         const input = event.target["menu-input"].value;
         // 1.모험
         if (input === "1") {
             this.changeScreen("battle");
             this.createMonster();
+            $battleInput.focus();
         }
         // 2.휴식
         else if (input === "2") {
@@ -89,11 +91,13 @@ class Game {
             this.showMessage(`체력이 모두 회복되었습니다.`);
             this.updateHeroStat();
             $menuInput.value = "";
+            $menuInput.focus();
         }
         // 3.종료
         else if (input === "3") {
             this.quit();
             this.showMessage(`게임을 종료했습니다.`);
+            $nameInput.focus();
         }
     };
     //! 전투 메뉴 메서드
@@ -106,9 +110,7 @@ class Game {
             hero.attack(monster);
             monster.attack(hero);
             if (hero.hp <= 0) {
-                this.showMessage(
-                    `${hero.lev}레벨에서 사망. 주인공을 새로 생성하세요.`,
-                );
+                this.showMessage(`${hero.lev}레벨에서 사망. 주인공을 새로 생성하세요.`);
                 this.quit();
             } else if (monster.hp <= 0) {
                 this.showMessage(`몬스터를 잡아 ${monster.xp}를 얻었습니다.`);
@@ -117,26 +119,28 @@ class Game {
                 this.updateHeroStat();
                 this.updateMonsterStat();
                 this.changeScreen("game");
+                $menuInput.focus();
             } else {
-                this.showMessage(
-                    `${hero.att}의 피해를 주고, ${monster.att}의 피해를 받았다!`,
-                );
+                this.showMessage(`${hero.att}의 피해를 주고, ${monster.att}의 피해를 받았다!`);
                 this.updateHeroStat();
                 this.updateMonsterStat();
             }
+            $battleInput.value = "";
+            $battleInput.focus();
         }
         // 2.회복
         else if (input === "2") {
             const { hero, monster } = this;
             hero.heal(monster);
             if (hero.hp <= 0) {
-                this.showMessage(
-                    `${hero.lev}레벨에서 사망. 주인공을 새로 생성하세요.`,
-                );
+                this.showMessage(`${hero.lev}레벨에서 사망. 주인공을 새로 생성하세요.`);
                 this.quit();
+                $nameInput.focus();
             }
             this.updateHeroStat();
             this.updateMonsterStat();
+            $battleInput.value = "";
+            $battleInput.focus();
         }
         // 3.도망
         else if (input === "3") {
@@ -145,6 +149,7 @@ class Game {
             this.updateHeroStat();
             this.updateMonsterStat();
             this.changeScreen("game");
+            $menuInput.focus();
         }
     };
     //! 플레이어 정보 업데이트 메서드
@@ -170,12 +175,7 @@ class Game {
     createMonster() {
         const randomIndex = Math.floor(Math.random() * this.monsterList.length);
         const randomMonster = this.monsterList[randomIndex];
-        this.monster = new Monster(
-            randomMonster.name,
-            randomMonster.hp,
-            randomMonster.att,
-            randomMonster.xp,
-        );
+        this.monster = new Monster(randomMonster.name, randomMonster.hp, randomMonster.att, randomMonster.xp);
         this.updateMonsterStat();
         this.showMessage(`몬스터와 마주쳤다. ${this.monster.name}인 것 같다!`);
     }
@@ -235,9 +235,7 @@ class Hero extends Unit {
     heal(monster) {
         this.hp + 20 <= this.maxHp ? (this.hp += 20) : (this.hp = this.maxHp);
         this.hp -= monster.att;
-        this.game.showMessage(
-            `체력이 20회복되었습니다. ${monster.att}의 피해를 받았다!`,
-        );
+        this.game.showMessage(`체력이 20회복되었습니다. ${monster.att}의 피해를 받았다!`);
     }
     //! 경험치 획득 메서드
     getXp(xp) {
@@ -263,4 +261,6 @@ $startScreen.addEventListener("submit", (event) => {
     const name = event.target["name-input"].value;
     game = new Game(name); //게임 객체 생성
     game.showMessage(``);
+    $menuInput.focus();
 });
+$nameInput.focus();
