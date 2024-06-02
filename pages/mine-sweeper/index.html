@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>지뢰찾기</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body onselectstart="return false" ondragstart="return false">
+        <h1>지뢰찾기</h1>
+        <form id="form">
+            <input placeholder="가로 줄" id="row" size="5" />
+            <input placeholder="세로 줄" id="cell" size="5" />
+            <input placeholder="지뢰" id="mine" size="5" />
+            <button>생성</button>
+        </form>
+        <table id="table">
+            <tbody></tbody>
+        </table>
+        <h2 id="timer"></h2>
+        <div id="result"></div>
+        <script defer src="index.js"></script>
+    </body>
+</html>
