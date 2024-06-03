@@ -1,0 +1,41 @@
+#body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    padding: 12px;
+    padding-bottom: 60px;
+    border-radius: 8px;
+    background-color: #f1f1f4;
+}
+
+#anno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#wordInput {
+    width: 100%;
+    height: 48px;
+    margin: 0 12px;
+    margin-top: 48px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+button {
+    width: 100%;
+    height: 48px;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #2572ff;
+    color: white;
+    font-size: 16px;
+}

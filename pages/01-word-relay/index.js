@@ -1,11 +1,21 @@
-const numberOfPlayers = Number(prompt("참가자는 몇 명인가요?"));
+const numberOfPlayers1 = Number();
 const $input = document.querySelector("input");
 const $button = document.querySelector("button");
 const $word = document.querySelector("#word");
 const $order = document.querySelector("#order");
+const $player = document.getElementById("player");
+const $lastWord = document.getElementById("lastWord");
 
 let currentWord;
 let previousWord;
+
+//! 시작 인구 정하는 함수
+function numberOfPlayers() {
+    $player.style.display = "none";
+    $lastWord.style.display = "none";
+    document.querySelector("#anno").textContent = "참가자는 몇 명인가요?";
+    $input.placeholder = "숫자만 입력해주세요";
+}
 
 //---화면을 업데이트시켜주는 함수---//
 const updateDisplay = () => {
@@ -43,9 +53,7 @@ const handleClick = () => {
 
 //---입력버튼 함수---//
 $input.addEventListener("input", handleInput);
-$input.addEventListener("keydown", (event) => {
-    if (event.keyCode === 13) {
-        handleClick();
-    }
-});
 $button.addEventListener("click", handleClick);
+
+//# 게임 시작
+numberOfPlayers();

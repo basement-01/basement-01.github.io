@@ -1,33 +1,48 @@
-/*! #region font-family*/
+/*# region font-family*/
 @font-face {
-    font-weight: 200;
+    font-weight: 100;
     src: url("assets/font/pretendard/Pretendard-Thin.woff") format("woff");
     font-family: "Pretendard";
 }
 @font-face {
-    font-weight: 300;
+    font-weight: 200;
     src: url("assets/font/pretendard/Pretendard-ExtraLight.woff") format("woff");
     font-family: "Pretendard";
 }
 @font-face {
-    font-weight: 400;
+    font-weight: 300;
     src: url("assets/font/pretendard/Pretendard-Light.woff") format("woff");
     font-family: "Pretendard";
 }
 
 @font-face {
-    font-weight: 500;
+    font-weight: 400;
     src: url("assets/font/pretendard/Pretendard-Regular.woff") format("woff");
     font-family: "Pretendard";
 }
 @font-face {
-    font-weight: 600;
+    font-weight: 500;
     src: url("assets/font/pretendard/Pretendard-Medium.woff") format("woff");
+    font-family: "Pretendard";
+}
+@font-face {
+    font-weight: 600;
+    src: url("assets/font/pretendard/Pretendard-SemiBold.woff") format("woff");
     font-family: "Pretendard";
 }
 @font-face {
     font-weight: 700;
     src: url("assets/font/pretendard/Pretendard-Bold.woff") format("woff");
+    font-family: "Pretendard";
+}
+@font-face {
+    font-weight: 800;
+    src: url("assets/font/pretendard/Pretendard-ExtraBold.woff") format("woff");
+    font-family: "Pretendard";
+}
+@font-face {
+    font-weight: 900;
+    src: url("assets/font/pretendard/Pretendard-Black.woff") format("woff");
     font-family: "Pretendard";
 }
 /* #endregion */
@@ -40,16 +55,81 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-weight: 400;
+    overscroll-behavior: none;
+    font-weight: 300;
+    font-size: 16px;
     font-family: "Pretendard";
+    touch-action: manipulation;
 }
 
 body {
     -ms-overflow-style: none;
     width: calc(100vw - ((100vw - 100%)));
 }
+/*! 데스크탑 */
+@media screen and (min-width: 800px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 800px;
+        margin-top: 120px;
+    }
 
-@media (max-width: 799px) {
+    #header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-width: 800px;
+        height: 80px;
+        backdrop-filter: blur(8px);
+        background: #ffffffaa;
+        box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            padding: 0 24px;
+            & a {
+                display: flex;
+                align-self: center;
+                justify-content: center;
+                height: 100%;
+                color: #111;
+                text-decoration: none;
+                & img {
+                    width: 40px;
+                    object-fit: contain;
+                }
+                & h1 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    margin-left: 8px;
+                    font-weight: 400;
+                    font-size: 32px;
+                }
+            }
+            #mail {
+                position: relative;
+                top: 8px;
+
+                color: #aaa;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+/*! 모바일 뷰 */
+@media screen and (max-width: 799px) {
     section {
         display: flex;
         flex-direction: column;
@@ -106,68 +186,6 @@ body {
                 display: none;
                 position: relative;
                 top: 8px;
-                color: #aaa;
-                font-weight: 400;
-            }
-        }
-    }
-}
-
-@media (min-width: 800px) {
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 800px;
-        margin-top: 120px;
-        padding: 0 24px;
-    }
-
-    #header {
-        display: flex;
-        position: fixed;
-        top: 0;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-width: 800px;
-        height: 80px;
-        backdrop-filter: blur(8px);
-        background: #ffffffaa;
-        box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            height: 100%;
-            padding: 0 24px;
-            & a {
-                display: flex;
-                align-self: center;
-                justify-content: center;
-                height: 100%;
-                color: #111;
-                text-decoration: none;
-                & img {
-                    width: 40px;
-                    object-fit: contain;
-                }
-                & h1 {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100%;
-                    margin-left: 8px;
-                    font-weight: 400;
-                    font-size: 32px;
-                }
-            }
-            #mail {
-                position: relative;
-                top: 8px;
-
                 color: #aaa;
                 font-weight: 400;
             }
