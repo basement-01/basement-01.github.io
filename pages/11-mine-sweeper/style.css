@@ -1,0 +1,46 @@
+section {
+    & h1 {
+        margin: 20px 0;
+    }
+}
+table {
+    width: 32px;
+    height: 32px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-weight: 900;
+    cursor: default;
+    table-layout: fixed;
+}
+
+td {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    background: #ebebeb;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: center;
+}
+td.opened {
+    background: #b4b4b4;
+}
+td.flag {
+    margin: 0;
+}
+td.question {
+    margin: 0;
+}
+
+#timer {
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+}
+input,
+button {
+    font-size: 20px;
+}
