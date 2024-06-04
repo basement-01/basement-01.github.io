@@ -1,4 +1,4 @@
-/*# region font-family*/
+/*#region font-family*/
 @font-face {
     font-weight: 100;
     src: url("assets/font/pretendard/Pretendard-Thin.woff") format("woff");
@@ -49,6 +49,11 @@
 
 ::-webkit-scrollbar {
     display: none;
+}
+:root {
+    --primary: #2572ff;
+    --primary-hover: #1756ca;
+    --box-color: #f1f1f4;
 }
 
 * {
