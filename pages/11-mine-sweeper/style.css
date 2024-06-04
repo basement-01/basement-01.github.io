@@ -42,15 +42,16 @@ td.question {
 #result {
     margin-top: 20px;
 }
-input,
+input {
+    width: 60px;
+    margin: 8px;
+    font-size: 16px;
+    text-align: center;
+}
 button {
     width: 60px;
-    font-size: 16px;
-}
-#row,
-#cell,
-#mine {
-    width: 60px;
+    margin: 8px;
+    padding: 8px;
     font-size: 16px;
     text-align: center;
 }
