@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: start;
     width: 100%;
+    max-width: 480px;
     padding: 12px;
     padding-bottom: 60px;
     border-radius: 8px;
@@ -17,6 +18,26 @@
     margin-top: 48px;
     font-weight: 500;
     font-size: 20px;
+}
+
+#player {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 20px;
+    & span {
+        font-weight: 500;
+        font-size: 20px;
+    }
+}
+
+#lastWord {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    & span {
+        font-weight: 500;
+        font-size: 20px;
+    }
 }
 
 #wordInput {
@@ -37,5 +58,22 @@ button {
     border-radius: 8px;
     background-color: #2572ff;
     color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    & :hover {
+        background-color: #1756ca;
+    }
+}
+
+#log {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#log1 {
+    margin-top: 32px;
+    font-weight: 500;
     font-size: 16px;
 }
