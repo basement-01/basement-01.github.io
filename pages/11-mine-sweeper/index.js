@@ -66,6 +66,10 @@ function onSubmit(event) {
     mine = parseInt(event.target.mine.value);
     if (row * cell <= mine) {
         $result.textContent = "지뢰 갯수가 전체 갯수보다 많습니다.";
+        clearInterval(interval);
+        $timer.textContent = "";
+        $tbody.innerHTML = "";
+
         return;
     }
     openCount = 0;
@@ -75,6 +79,7 @@ function onSubmit(event) {
     clearInterval(interval);
     $tbody.innerHTML = "";
     $result.innerHTML = "";
+
     drawTable(); // 맵 그리기
     startTime = new Date(); // 시간 측정 시작
     interval = setInterval(() => {
@@ -106,7 +111,7 @@ function plantMine() {
     }
     // DIFFICULTY의 갯수만큼 n진법으로 만드는 기능
     for (let k = 0; k < shuffle.length; k++) {
-        const ver = Math.floor(shuffle[k] / row);
+        const ver = Math.floor(shuffle[k] / cell);
         const hor = shuffle[k] % cell;
         data[ver][hor] = CODE.MINE;
     }
@@ -277,7 +282,9 @@ function countMine(rowIndex, cellIndex) {
 //! 맵 그래픽 생성 함수
 function drawTable() {
     // 무작위 마인 설치 함수 실행
+
     data = plantMine();
+    console.log(data);
     // 행의 갯수만큼  #tr 생성 (row 만큼)
     data.forEach((row) => {
         const $tr = document.createElement("tr");

@@ -1,6 +1,8 @@
 section {
     & h1 {
         margin: 20px 0;
+        font-weight: 600;
+        font-size: 24px;
     }
 }
 table {
@@ -42,5 +44,13 @@ td.question {
 }
 input,
 button {
-    font-size: 20px;
+    width: 60px;
+    font-size: 16px;
+}
+#row,
+#cell,
+#mine {
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
 }
