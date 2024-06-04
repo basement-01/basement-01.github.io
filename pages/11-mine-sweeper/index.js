@@ -87,6 +87,7 @@ function onSubmit(event) {
         $timer.textContent = `${time}초`;
     }, 1);
 }
+
 $form.addEventListener("submit", onSubmit); // 이벤트 등록
 
 //! 행렬 생성 + 무작위 마인 설치 함수
