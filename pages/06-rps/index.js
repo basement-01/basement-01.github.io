@@ -65,7 +65,7 @@ const clickButton = (event) => {
         setTimeout(() => {
             clickable = true;
             intervalId = setInterval(changeComputerHand, 20);
-        }, 1000);
+        }, 2000);
     }
 };
 $rock.addEventListener("click", clickButton);

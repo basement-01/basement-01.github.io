@@ -1,4 +1,37 @@
 #computer {
     width: 165px;
     height: 200px;
+    margin-top: 48px;
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+.btn {
+    width: 100%;
+}
+button {
+    width: 100%;
+    height: 48px;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+        background-color: var(--primary-hover);
+    }
+}
+
+#score {
+    font-weight: 600;
+    font-size: 24px;
 }

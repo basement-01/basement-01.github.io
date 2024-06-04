@@ -1,5 +1,6 @@
 const $form = document.querySelector("#form");
 const $input = document.querySelector("#input");
+const $log = document.querySelector("#log");
 const $logs = document.querySelector("#logs");
 const numbers = [];
 const tries = [];
@@ -16,21 +17,27 @@ for (let n = 0; n <= 2; n += 1) {
 }
 function checkInput(input) {
     if (input.length !== 3) {
-        return alert("3자리 숫자를 입력하세요.");
+        $log.textContent = "3자리 숫자를 입력하세요.";
+        return;
     }
     if (new Set(input).size !== 3) {
-        return alert("중복된 숫자를 입력했습니다.");
+        $log.textContent = "중복된 숫자를 입력했습니다.";
+        return;
     }
     if (tries.includes(input)) {
-        return alert("이미 시도한 값입니다.");
+        $log.textContent = "이미 시도한 값입니다.";
+        return;
     }
+    $log.textContent = "";
     return true;
 }
-$form.addEventListener("submit", (event) => {
+
+const eventHandler = (event) => {
     event.preventDefault();
     const value = $input.value;
     $input.value = "";
     const valid = checkInput(value);
+    $input.focus();
     if (!valid) return;
     if (answer.join("") === value) {
         $logs.textContent = "홈런!";
@@ -65,4 +72,11 @@ $form.addEventListener("submit", (event) => {
         return;
     }
     tries.push(value);
+};
+
+$form.addEventListener("submit", eventHandler);
+$form.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        eventHandler;
+    }
 });

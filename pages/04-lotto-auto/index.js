@@ -3,6 +3,7 @@ const $main = document.querySelector("#main");
 const $draw = document.querySelector("#draw");
 const $clear = document.querySelector("#clear");
 const $first = document.querySelector("#first");
+const $input = document.querySelector("#input");
 const $try = document.querySelector("#try");
 const $replaceColor = document.getElementById("#main");
 
@@ -18,7 +19,12 @@ let threeGrade = 0;
 let twoGrade = 0;
 let oneGrade = 0;
 let money = 0;
+//---인풋반환하는 함수---//
+let currentTry = 1;
 
+const handleInput = (event) => {
+    currentTry = event.target.value;
+};
 const compareArr = (arr1, arr2) => {
     let count = 0;
     for (let i = 0; i < arr1.length; i++) {
@@ -61,12 +67,10 @@ const resetArr = () => {
     }
     lottoFirst.sort((a, b) => a - b);
     lottoFirst = lottoFirst.flat();
-    console.log(lottoFirst);
     const lottoIndex = Math.floor(Math.random() * numbers.length);
     const lottoNumber = numbers.splice(lottoIndex, 1);
     lottoBonus.push(lottoNumber);
     lottoBonus = lottoBonus.flat();
-    console.log(lottoBonus);
     //어떤 숫자가 뽑혔는지 화면에 표시 ex.'[ 1, 2, 3, 4, 5, 6 ]'
     $first.append(`[ ${lottoFirst.join(", ")} ] 보너스번호 : ${lottoBonus}`, document.createElement("br"));
     tryNum = 0;
@@ -78,14 +82,19 @@ const resetArr = () => {
     money = 0;
     $try.textContent = "";
     $try.append(
-        `시도횟수 : ${tryNum} [5등: ${fiveGrade}번] [4등: ${fourGrade}번] [3등: ${threeGrade}번] [2등: ${twoGrade}번] [1등: ${oneGrade}번]`,
+        `시도횟수 : ${tryNum}`,
+        document.createElement("br"),
+        `[5등: ${fiveGrade}번] [4등: ${fourGrade}번] [3등: ${threeGrade}번] [2등: ${twoGrade}번] [1등: ${oneGrade}번]`,
+        document.createElement("br"),
     );
-    $try.append(` 현재 금액 : ${money}원`);
+    $try.append(` 현재 금액 : ${money.toLocaleString()}원`);
+    $input.value = "1";
+    currentTry = 1;
 };
 
 //---뽑기 버튼 클릭 시 1~전체숫자 중에 랜덤하게 7개 뽑아서 나타내는 기능---//
 $draw.addEventListener("click", () => {
-    for (let ii = 0; ii < 10000; ii++) {
+    for (let ii = 0; ii < Number(currentTry); ii++) {
         money -= 1000;
         lottoResult = [];
         //뽑기 버튼 클릭시 6개의 숫자를 랜덤하게 뽑음
@@ -101,10 +110,8 @@ $draw.addEventListener("click", () => {
         lottoResult.sort((a, b) => a - b);
         //어떤 숫자가 뽑혔는지 화면에 표시 ex.'[ 1, 2, 3, 4, 5, 6 ]'
         lottoResult = lottoResult.flat();
-        console.log(lottoResult);
         compareArr(lottoFirst, lottoResult);
         let num = compareArr(lottoFirst, lottoResult);
-        console.log(compareArr(lottoFirst, lottoResult));
         if (num < 3) {
             // $main.prepend(`[ ${lottoResult.join(', ')} ] 꽝...`, document.createElement('br'));
         }
@@ -114,7 +121,7 @@ $draw.addEventListener("click", () => {
             money += 5000;
         }
         if (num === 4) {
-            $main.prepend(`[ ${lottoResult.join(", ")} ] 4등 당첨! 당첨금 50,000원!`, document.createElement("br"));
+            // $main.prepend(`[ ${lottoResult.join(", ")} ] 4등 당첨! 당첨금 50,000원!`, document.createElement("br"));
             fourGrade += 1;
             money += 50000;
         }
@@ -148,9 +155,12 @@ $draw.addEventListener("click", () => {
         tryNum += 1;
         $try.textContent = "";
         $try.append(
-            `시도횟수 : ${tryNum} [5등: ${fiveGrade}번] [4등: ${fourGrade}번] [3등: ${threeGrade}번] [2등: ${twoGrade}번] [1등: ${oneGrade}번]`,
+            `시도횟수 : ${tryNum}`,
+            document.createElement("br"),
+            `[5등: ${fiveGrade}번] [4등: ${fourGrade}번] [3등: ${threeGrade}번] [2등: ${twoGrade}번] [1등: ${oneGrade}번]`,
+            document.createElement("br"),
         );
-        $try.append(` 현재 금액 : ${money}원`);
+        $try.append(` 현재 금액 : ${money.toLocaleString()}원`);
     }
 });
 
@@ -179,3 +189,4 @@ function findCommonElements(arr1, arr2) {
 }
 //---실행---//
 resetArr();
+$input.addEventListener("input", handleInput);
