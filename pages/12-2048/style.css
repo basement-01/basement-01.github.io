@@ -1,0 +1,156 @@
+/*! 모바일 뷰 */
+@media screen and (max-width: 799px) {
+    #table {
+        border-collapse: collapse;
+        user-select: none;
+        & tr {
+            & td {
+                min-width: 80px;
+                max-width: 80px;
+                height: 80px;
+                border: 7px solid #bbada0;
+                font-weight: 700;
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+    }
+    #score {
+        user-select: none;
+    }
+}
+
+/*! 데스크탑 뷰 */
+@media screen and (min-width: 800px) {
+    #table {
+        border-collapse: collapse;
+        user-select: none;
+        & tr {
+            & td {
+                min-width: 128px;
+                max-width: 128px;
+                height: 128px;
+                border: 10px solid #bbada0;
+                font-weight: 700;
+                font-size: 40px;
+                text-align: center;
+            }
+        }
+    }
+    #score {
+        user-select: none;
+    }
+}
+#score {
+    margin-top: 24px;
+    font-weight: 700;
+    font-size: 24px;
+}
+#log {
+    margin-top: 24px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 210px;
+    border-collapse: collapse;
+    & button {
+        border: 0;
+        background-color: transparent;
+    }
+    #up {
+        width: 70px;
+        height: 70px;
+        background-image: url(img/button.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .btnContainer {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        #left {
+            width: 70px;
+            height: 70px;
+            margin-left: 0;
+            rotate: -90deg;
+            background-image: url(img/button.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #right {
+            width: 70px;
+            height: 70px;
+            margin-right: 0;
+            rotate: 90deg;
+            background-image: url(img/button.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    #down {
+        width: 70px;
+        height: 70px;
+        rotate: 180deg;
+        background-image: url(img/button.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+/* #region color-$ */
+.color-2 {
+    background-color: #eee4da;
+    color: #776e65;
+}
+.color-4 {
+    background-color: #eee1c9;
+    color: #776e65;
+}
+.color-8 {
+    background-color: #f3b27a;
+    color: white;
+}
+.color-16 {
+    background-color: #f69664;
+    color: white;
+}
+.color-32 {
+    background-color: #f77c5f;
+    color: white;
+}
+.color-64 {
+    background-color: #f75f3b;
+    color: white;
+}
+.color-128 {
+    background-color: #edd073;
+    color: #776e65;
+}
+.color-256 {
+    background-color: #edcc62;
+    color: #776e65;
+}
+.color-512 {
+    background-color: #edc950;
+    color: #776e65;
+}
+.color-1024 {
+    background-color: #edc53f;
+    color: #776e65;
+}
+.color-2048 {
+    background-color: #edc22e;
+    color: #776e65;
+}
+/* #endregion */
