@@ -107,6 +107,11 @@
         background-repeat: no-repeat;
     }
 }
+#prev {
+    width: 210px;
+    height: 70px;
+    margin-top: 24px;
+}
 
 /* #region color-$ */
 .color-2 {
