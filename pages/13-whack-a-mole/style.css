@@ -1,0 +1,69 @@
+#handle {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  & div {
+    display: flex;
+    justify-content: space-evenly;
+    & span {
+      font-size: 20px;
+    }
+  }
+  & button {
+    width: 120px;
+    height: 48px;
+    margin-top: 12px;
+  }
+}
+.cell {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  background-color: "yellow";
+}
+
+.gopher,
+.bomb {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  transition: bottom 1s;
+}
+.gopher {
+  background: url(img/gopher.png) center center no-repeat;
+  background-size: 200px 200px;
+}
+.dead {
+  background: url(img/dead_gopher.png) center center no-repeat;
+  background-size: 200px 200px;
+}
+.bomb {
+  background: url(img/bomb.png) center center no-repeat;
+  background-size: 200px 200px;
+}
+.boom {
+  background: url(img/explode.png) center center no-repeat;
+  background-size: 200px 200px;
+}
+.hidden {
+  bottom: -200px;
+}
+.hole {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 150px;
+  background: url(img/mole-hole.png) center center no-repeat;
+  background-size: 200px 150px;
+}
+.hole-front {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 30px;
+  background: url(img/mole-hole-front.png) center center no-repeat;
+  background-size: 200px 30px;
+}
