@@ -45,11 +45,11 @@
   transition: bottom 1s;
 }
 .gopher {
-  background: url(img/gopher.png) center center no-repeat;
+  background: url(img/Edit_gopher.png) center center no-repeat;
   background-size: 200px 200px;
 }
 .dead {
-  background: url(img/dead_gopher.png) center center no-repeat;
+  background: url(img/Edit_dead_gopher.png) center center no-repeat;
   background-size: 200px 200px;
 }
 .bomb {
